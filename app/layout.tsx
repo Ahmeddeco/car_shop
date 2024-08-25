@@ -1,16 +1,15 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import NavBar from '@/components/NavBar'
-import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+	metadataBase: new URL('http://localhost:3000/'),
 	title: 'Car Shop | Eng.Ahmed',
-	description: 'Car Shop ',
+	description: 'Car Shop To Rent and Buy Cars',
 	openGraph: {
-		images: '/opengraph-image.png',
+		images: '/og-image.png',
 	},
 }
 
@@ -21,10 +20,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>
-				<NavBar />
+			<body className='relative'>
 				{children}
-				<Footer />
 			</body>
 		</html>
 	)
